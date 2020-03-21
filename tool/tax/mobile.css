@@ -1,0 +1,53 @@
+#VATCalcForm{
+/* padding:0 1em; */
+margin-bottom:1em;
+}
+
+#VATCalcForm input::-webkit-outer-spin-button,
+#VATCalcForm input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;	
+    margin: 0;
+}
+#VATCalcForm input[type=number] {
+    -moz-appearance:textfield;
+}
+
+#VATCalcForm .VcpInputDiv{
+float:left;
+clear:none;
+}
+#VATCalcForm .VcpInputDiv div.ui-input-text{
+width: auto;
+}
+#VATCalcForm .VcpInputDiv label{
+padding-left:4px;
+padding-bottom:4px;
+width:auto;
+}
+
+#VcpGrossDiv, #VcpNettDiv, #VcpVATDiv, #VcpSubmitDiv{
+padding-left:2%;
+width:18%; /* 28% */
+min-width:5.5em;
+}
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+    #VcpGrossDiv, #VcpNettDiv, #VcpVATDiv, #VcpSubmitDiv{
+        width:35%;
+    }
+}
+#VcpRateDiv{
+width:10%;
+min-width:5.5em;
+min-width:5.9em;
+}
+#VcpSubmitDiv{
+width:inherit;
+
+padding-bottom:0.97em;
+margin-bottom:0.9em;
+}
+#VcpSubmitDiv .ui-btn{
+min-width:6.5em;
+margin:23px 0 0 0;
+}

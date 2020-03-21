@@ -1,0 +1,143 @@
+.clear{clear:both}
+
+
+.ui-body-z{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+}
+#headerBlock{
+  position:relative;
+  margin:0 auto;
+  padding:0;
+  width:80%; 
+  max-width:880px;  
+}
+.ui-header{
+background: #284456;
+background: linear-gradient(47deg, #2F4A5F 1%, #325166 40%, #284456 80%);
+b_ox-shadow: inset 0px 0px 8px rgba(0,0,0,.25);
+color:#DDD;
+border-bottom:0.3em solid #9BE846;
+}
+.ui-title{
+  font-family: 'electrolizeregular', Century Gothic, Arial, sans-serif;
+  font-weight:normal;
+  color:#9BE846;
+  opacity:0.95;
+  text-shadow: 1px 1px 6px #000;
+}
+.ui-header .ui-title{
+  font-size: 1.8em; 
+  overflow:visible;
+  margin: 0 auto;
+  padding: 0.3em 0 0.3em 0;
+}
+.ui-title b{
+font-weight:normal;
+color:#FFFFFF;
+}
+h2{
+margin:0px;
+padding-top:1em;
+font-size:1.4em;
+}
+h2:nth-of-type(1){
+padding-top:0;
+}
+h1 a{
+text-decoration:none;
+color:#9BE846;
+}
+
+
+#ContentBG{
+}
+.ui-content{
+width:100%; 
+max-width:880px;
+padding:0;
+background: #284456;
+background: linear-gradient(140deg, #284466 0px, #083446 280px);
+color:#DDD;
+box-shadow: 0px 0px 1px 1px rgba(255,255,255,.7);
+background-clip: padding-box;
+}
+
+#contentHead, #contentBody{
+padding:1em 2em;
+border:0;
+}
+#contentHead{
+text-shadow: 0px 1px 0px #333;
+}
+#contentBody h2{
+color:#083446;
+text-shadow: 1px 1px 4px #A6A6A6;
+}
+#contentHead a.ui-link{
+color: #8cd444;
+}
+
+
+.social{
+background:#203745;
+background:rgba(0, 0, 0, 0.2);
+color: #BBB;
+font-size: 15px;
+h_eight: 32px;
+line-height:0;
+padding: 1.5em 0.25em 0.5em;
+text-align: center;
+}
+.addthis_toolbox{
+display:inline-block;
+padding: 0 0 1em 2em;
+}
+.addthis_toolbox.first{
+padding-left:0;
+}
+.socialTitle{
+float:left;
+line-height:32px;
+margin:0 0.2em 0 0
+}
+
+
+/* anything under 800px */
+@media (max-width: 800px){
+#menuList{
+display:none;
+}
+#menuButton{
+display:block;
+}
+#headerBlock{
+max-width: 19em;
+}
+.ui-content>div:last-child{
+padding-bottom:5em !important;
+}
+}
+
+
+/* Desktops laptops anything over 800px wide */
+@media (min-width: 801px){
+.ui-header .ui-title{
+  text-align:left;	
+  w_idth:80%; 
+  m_ax-width:880px;  
+}
+.ui-content{
+width:80%; 
+margin: 0 auto;
+border-radius: 5px;
+border:10px solid #7897AE;
+border:10px solid rgba(160,200,255, 0.55);
+}
+#ContentBG{
+padding:1em 0 4em 0;
+}
+
+
+
+}
+

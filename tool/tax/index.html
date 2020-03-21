@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta name="keywords" content="增值税计算器" />
+    <meta name="description" content="增值税计算器" />
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./jquery.mobile-1.3.1.css" />
+    <script src="./jquery-1.9.1.min.js"></script>
+
+    <script>
+      $(document).bind('mobileinit', function() {
+        $.mobile.ajaxEnabled = false;
+        $.mobile.pushStateEnabled = false;
+      });
+      $(document).bind('pageinit', function() {
+        $(":jqmData(role='page')").attr('data-title', document.title);
+      });
+    </script>
+    <script src="./jquery.mobile-1.3.1.min.js"></script>
+
+    <script type="text/javascript" src="./vc.js"></script>
+
+    <link rel="stylesheet" href="./mobile.css" />
+    <link rel="stylesheet" href="./site.css" />
+
+    <title>
+      中国增值税计算器
+    </title>
+  </head>
+
+  <body class="ui-mobile-viewport ui-overlay-z">
+    <div
+      class="ui-page ui-body-z ui-page-header-fixed ui-page-active"
+      data-title="中国增值税计算器"
+      style="padding-top: 55px; min-height: 195px; display:block"
+    >
+      <div id="ContentBG">
+        <div data-role="content" class="ui-content">
+          <div id="contentBody" data-role="body" class="ui-body-c">
+            <h2 class="ui-title">在线增值税计算器</h2>
+
+            <form
+              name="VATCalcForm"
+              id="VATCalcForm"
+              autocomplete="off"
+              class="VcpForm"
+            >
+              <div id="VcpRateDiv" data-role="fieldcontain" class="VcpInputDiv">
+                <label for="VcpRateEdit" class="VcpLabel">增值税率</label
+                ><input
+                  id="VcpRateEdit"
+                  name="VcpRateEdit"
+                  type="number"
+                  novalidate
+                  step="any"
+                  autocomplete="off"
+                  class="VcpEdit"
+                />
+              </div>
+              <div
+                id="VcpGrossDiv"
+                data-role="fieldcontain"
+                class="VcpInputDiv"
+              >
+                <label for="VcpGrossEdit" class="VcpLabel">总金额(含税)</label
+                ><input
+                  id="VcpGrossEdit"
+                  name="VcpGrossEdit"
+                  type="number"
+                  novalidate
+                  step="any"
+                  autocomplete="off"
+                  placeholder="包括增值税"
+                  class="VcpEdit"
+                />
+              </div>
+              <div id="VcpNettDiv" data-role="fieldcontain" class="VcpInputDiv">
+                <label for="VcpNettEdit" class="VcpLabel">净额(不含税)</label
+                ><input
+                  id="VcpNettEdit"
+                  name="VcpNettEdit"
+                  type="number"
+                  novalidate
+                  step="any"
+                  autocomplete="off"
+                  placeholder="不包括增值税"
+                  class="VcpEdit"
+                />
+              </div>
+              <div id="VcpVATDiv" data-role="fieldcontain" class="VcpInputDiv">
+                <label for="VcpVATEdit" class="VcpLabel">增值税</label
+                ><input
+                  id="VcpVATEdit"
+                  name="VcpVATEdit"
+                  type="number"
+                  novalidate
+                  step="any"
+                  autocomplete="off"
+                  class="VcpEdit"
+                />
+              </div>
+              <div
+                id="VcpSubmitDiv"
+                data-role="fieldcontain"
+                class="VcpInputDiv"
+              >
+                <input
+                  type="submit"
+                  id="VcpSubmitButton"
+                  name="VcpSubmitButton"
+                  value="好"
+                  class="VcpEdit"
+                  data-icon="check"
+                />
+              </div>
+              <div style="clear:both"></div>
+            </form>
+
+            <br />
+            <br />
+          </div>
+          <!-- contentbody -->
+        </div>
+        <!-- content -->
+
+        <script type="text/javascript">
+          $(function() {
+            // VCList = new VATCalculatorList;
+            VATCalculator = new VATCalculator(null);
+            VATCalculator.InitUI({ Rate: 13 });
+            $('#VcpRateEdit').removeAttr('readonly');
+            $('#VcpRateEdit').removeAttr('disabled');
+          });
+        </script>
+      </div>
+    </div>
+  </body>
+  <!-- <div>/*
+    Copyright 2014 Apexico / VATCalculatorPlus
+    All rights reserved.
+   */</div> -->
+</html>
