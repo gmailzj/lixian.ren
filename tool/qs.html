@@ -1,0 +1,76 @@
+<html lang="zh-CN" style="--status-bar-height:0px; font-size: 20.7px; --window-top:0px; --window-bottom:0px;"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>json 、x-www-form-urlencoded 互转工具</title>
+    <script>document.addEventListener('DOMContentLoaded', function () {
+            document.documentElement.style.fontSize = document.documentElement.clientWidth / 20 + 'px'
+        })
+        var coverSupport = 'CSS' in window && typeof CSS.supports === 'function' && (CSS.supports('top: env(a)') || CSS.supports('top: constant(a)'))
+        document.write('<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0' + (coverSupport ? ', viewport-fit=cover' : '') + '" />')</script><meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+   <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+   <script src="https://cdn.bootcdn.net/ajax/libs/qs/6.9.4/qs.min.js"></script>
+
+</head><body>
+    <h5>json 、x-www-form-urlencoded 互转工具</h1>
+    <div style="display: block;
+    width: 60%;
+    height: 70%;
+    margin: 50px auto;">
+    <p>输入：</p>
+    <textarea type="text" id="code" placeholder="" cols="100" rows="10"></textarea>
+    <p>结果：</p>
+    <textarea type="text" id="output" placeholder="" cols="100" rows="10"></textarea>
+    <br/>
+<div><button id="toForm">json转x-www-form-urlencoded</button> <button id="toJson">x-www-form-urlencoded转json</button></div>
+
+</div>
+
+
+<script>
+    function jsonToForm(e){
+        console.log(e)
+        var code = document.getElementById("code").value;
+        var qs = window.Qs;
+        try {
+            var json = JSON.parse(code);
+        } catch (error) {
+            document.getElementById("output").value = '不是合法的json'
+            return ;
+        }
+        
+        if(typeof json == 'object' && json){
+            document.getElementById("output").value = qs.stringify(json)
+        } else {
+            document.getElementById("output").value = '不是合法的json'
+        }
+        console.log(code,qs.stringify(json) );
+    }
+
+    function formToJson(e){
+        console.log(e)
+        var code = document.getElementById("code").value;
+        var qs = window.Qs;
+        try {
+            var json = qs.parse(code);
+        } catch (error) {
+            // document.getElementById("output").value = '不是合法的json'
+            return ;
+        }
+        
+        if(typeof json == 'object' && json){
+            document.getElementById("output").value = JSON.stringify(json)
+        } else {
+            document.getElementById("output").value = '不是合法的x-www-form-urlencoded'
+        }
+        console.log(code,qs.stringify(json) );
+    }
+    document.getElementById("toForm").addEventListener("click",jsonToForm);
+    document.getElementById("toJson").addEventListener("click",formToJson);
+
+   
+</script>
+
+
+
+</body></html>
